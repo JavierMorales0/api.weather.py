@@ -14,7 +14,7 @@ API_URL = environ.get('API_URL')
 
 @app.route('/', methods=['GET'])
 def index():
-    city = request.args.get('city') or 'London'
+    city = request.args.get('city') or 'San_Miguel,El_Salvador'
     api_result = requests.get(
         API_URL + "/current?access_key=" + API_KEY + "&query=" + city)
     return jsonify(api_result.json())
